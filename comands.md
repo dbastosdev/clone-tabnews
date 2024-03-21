@@ -59,7 +59,7 @@ docker compose up
 ```
 
 Inicia a stack do projeto - em pasta específica:
-
+ 
 ```
 docker compose -f infra/compose.yaml up
 ```
