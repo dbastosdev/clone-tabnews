@@ -1,13 +1,26 @@
 # Dependências do projeto:
 
 - client do postgres para conexão ao banco de dados via cli
-- client do postgres para conexão ao banco de dados via node.js
-
 ```
 sudo apt install postgresql-client
-npm install pg@8.11.3
-
 ```
+- client do postgres para conexão ao banco de dados via node.js
+```
+npm install pg@8.11.3
+```
+- cria o arquivo `jsconfig.json` na raiz do repositório. Ele serve justamente para configurar o base url do projeto bem como outras configurações. https://code.visualstudio.com/docs/languages/jsconfig 
+```
+code jsconfig.json
+```
+- renomeia o arquivo `.env` para `.env.development`
+```
+git mv .env .env.development
+```
+
+
+
+
+
 
 # Testes:
 
@@ -32,9 +45,34 @@ npm run test
 # Operação do projeto:
 
 Roda o sistema localmente:
-
 ```
 npm run dev
+```
+Faz uma busca fuzzy por arquivos do projeto:
+```
+Ccommand + p
+```
+Roda o sistema localmente:
+```
+command + p seguido de @ e nova busca seleciona exatamente a linha do arquivo buscado. 
+```
+
+## Scripts: 
+
+Para operação do sistema com comandos simples e ágeis. 
+
+```
+  "scripts": {
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker compose -f infra/compose.yaml up -d",
+    "services:down": "docker compose -f infra/compose.yaml down",
+    "services:start": "docker compose -f infra/compose.yaml start",
+    "services:stop": "docker compose -f infra/compose.yaml stop",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write .",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  }
 ```
 
 ## Operação do docker e serviços:
