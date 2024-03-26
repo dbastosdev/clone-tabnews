@@ -1,26 +1,28 @@
 # Dependências do projeto:
 
 - client do postgres para conexão ao banco de dados via cli
+
 ```
 sudo apt install postgresql-client
 ```
+
 - client do postgres para conexão ao banco de dados via node.js
+
 ```
 npm install pg@8.11.3
 ```
-- cria o arquivo `jsconfig.json` na raiz do repositório. Ele serve justamente para configurar o base url do projeto bem como outras configurações. https://code.visualstudio.com/docs/languages/jsconfig 
+
+- cria o arquivo `jsconfig.json` na raiz do repositório. Ele serve justamente para configurar o base url do projeto bem como outras configurações. https://code.visualstudio.com/docs/languages/jsconfig
+
 ```
 code jsconfig.json
 ```
+
 - renomeia o arquivo `.env` para `.env.development`
+
 ```
 git mv .env .env.development
 ```
-
-
-
-
-
 
 # Testes:
 
@@ -45,21 +47,26 @@ npm run test
 # Operação do projeto:
 
 Roda o sistema localmente:
+
 ```
 npm run dev
 ```
+
 Faz uma busca fuzzy por arquivos do projeto:
+
 ```
 Ccommand + p
 ```
+
 Roda o sistema localmente:
+
 ```
-command + p seguido de @ e nova busca seleciona exatamente a linha do arquivo buscado. 
+command + p seguido de @ e nova busca seleciona exatamente a linha do arquivo buscado.
 ```
 
-## Scripts: 
+## Scripts:
 
-Para operação do sistema com comandos simples e ágeis. 
+Para operação do sistema com comandos simples e ágeis.
 
 ```
   "scripts": {
@@ -97,7 +104,7 @@ docker compose up
 ```
 
 Inicia a stack do projeto - em pasta específica:
- 
+
 ```
 docker compose -f infra/compose.yaml up
 ```
